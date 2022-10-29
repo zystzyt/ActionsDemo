@@ -8,12 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Run a one-line script
+      - name: Run actions
         run: echo Hello, world!
 
-      - name: Run a multi-line script
+      - name: Run apt install
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          apt-get update
+          apt-get install -y libgdiplus
+          apt-get install -y libc6-dev
+          apt-get install -y unzip
+
+      - name: Run wget
+        run: |
+          wget https://github.com/papyrus-mc/papyruscs/releases/download/v0.5.2.2/papyruscs-dotnetcore-0.1.1.33-linux64.zip
+          unzip papyruscs-dotnetcore-0.1.1.33-linux64.zip
