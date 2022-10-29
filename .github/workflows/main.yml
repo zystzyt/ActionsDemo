@@ -13,10 +13,10 @@ jobs:
 
       - name: Run apt install
         run: |
-          apt-get update
-          apt-get install -y libgdiplus
-          apt-get install -y libc6-dev
-          apt-get install -y unzip
+          sudo apt-get update
+          sudo apt-get install -y libgdiplus
+          sudo apt-get install -y libc6-dev
+          sudo apt-get install -y unzip
 
       - name: Run wget
         run: |
